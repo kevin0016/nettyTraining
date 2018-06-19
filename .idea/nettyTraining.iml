@@ -83,7 +83,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.0.7.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.0.7.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.5.1" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-all:4.1.25.Final" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:SpringBoot-Netty:unknown" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-all:4.1.25.Final" level="project" />
   </component>
 </module>

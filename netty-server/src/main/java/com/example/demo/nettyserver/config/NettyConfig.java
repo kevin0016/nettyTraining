@@ -1,4 +1,4 @@
-package com.example.demo.netty.config;
+package com.example.demo.nettyserver.config;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelOption;

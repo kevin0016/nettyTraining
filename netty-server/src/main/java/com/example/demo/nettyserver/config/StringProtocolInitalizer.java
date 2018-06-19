@@ -1,6 +1,6 @@
-package com.example.demo.netty.config;
+package com.example.demo.nettyserver.config;
 
-import com.example.demo.netty.handler.ServerHandler;
+import com.example.demo.nettyserver.handler.ServerHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
