@@ -1,5 +1,6 @@
-package com.example.demo.nettyserver.server;
+package com.example.demo.nettyclient.client;
 
+import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,8 @@ import java.net.InetSocketAddress;
 public class TCPServer {
 
     @Autowired
-    @Qualifier("serverBootstrap")
-    private ServerBootstrap b;
+    @Qualifier("bootstrap")
+    private Bootstrap b;
 
     @Autowired
     @Qualifier("tcpSocketAddress")
@@ -34,11 +35,11 @@ public class TCPServer {
         serverChannelFuture.channel().closeFuture().sync();
     }
 
-    public ServerBootstrap getB() {
+    public Bootstrap getB() {
         return b;
     }
 
-    public void setB(ServerBootstrap b) {
+    public void setB(Bootstrap b) {
         this.b = b;
     }
 
