@@ -1,8 +1,8 @@
 #不能用localhost,否则启动报异常:Unresolved address
 #tcp监听的端口
 tcp:
-  port: 8090
-  url: 127.0.0.a
+  port: 8010
+  url: 127.0.0.1
 # bossGroup的线程数
 boss:
   thread:
