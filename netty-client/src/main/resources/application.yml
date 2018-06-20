@@ -15,4 +15,5 @@ worker:
 so:
   keepalive:  true
   backlog: 100
-
+server:
+  port: 1000

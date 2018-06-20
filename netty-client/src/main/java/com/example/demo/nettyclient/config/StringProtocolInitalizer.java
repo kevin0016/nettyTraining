@@ -21,13 +21,13 @@ public class StringProtocolInitalizer extends ChannelInitializer<SocketChannel> 
     StringEncoder stringEncoder;
 
     @Autowired
-    ClientHandler serverHandler;
+    ClientHandler clientHandler;
 
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
         pipeline.addLast("decoder", stringDecoder);
-        pipeline.addLast("handler", serverHandler);
+        pipeline.addLast("handler", clientHandler);
         pipeline.addLast("encoder", stringEncoder);
     }
 
@@ -47,12 +47,11 @@ public class StringProtocolInitalizer extends ChannelInitializer<SocketChannel> 
         this.stringEncoder = stringEncoder;
     }
 
-    public ClientHandler getServerHandler() {
-        return serverHandler;
+    public ClientHandler getClientHandler() {
+        return clientHandler;
     }
 
-    public void setServerHandler(ClientHandler serverHandler) {
-        this.serverHandler = serverHandler;
+    public void setClientHandler(ClientHandler clientHandler) {
+        this.clientHandler = clientHandler;
     }
-
 }

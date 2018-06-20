@@ -21,6 +21,7 @@ public class ServerHandler extends SimpleChannelInboundHandler<String> {
     public void channelRead0(ChannelHandlerContext ctx, String msg)
             throws Exception {
         log.info("client msg:" + msg);
+        ctx.channel().writeAndFlush("Yoru msg is:" + msg);
         String clientIdToLong = ctx.channel().id().asLongText();
         log.info("client long id:" + clientIdToLong);
         String clientIdToShort = ctx.channel().id().asShortText();
