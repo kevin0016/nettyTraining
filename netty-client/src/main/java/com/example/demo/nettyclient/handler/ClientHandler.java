@@ -12,9 +12,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.net.InetAddress;
-@Component
-@Qualifier("clientHandler")
-@ChannelHandler.Sharable
+//@Component
+//@Qualifier("clientHandler")
+//@ChannelHandler.Sharable
 public class ClientHandler extends SimpleChannelInboundHandler<String> {
     private static final Logger log = LoggerFactory.getLogger(ClientHandler.class);
 

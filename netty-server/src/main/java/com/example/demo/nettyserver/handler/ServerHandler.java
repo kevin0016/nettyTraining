@@ -1,5 +1,7 @@
 package com.example.demo.nettyserver.handler;
 
+import io.netty.buffer.Unpooled;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -21,7 +23,6 @@ public class ServerHandler extends SimpleChannelInboundHandler<String> {
     public void channelRead0(ChannelHandlerContext ctx, String msg)
             throws Exception {
         log.info("client msg:" + msg);
-        ctx.channel().writeAndFlush("Yoru msg is:" + msg);
         String clientIdToLong = ctx.channel().id().asLongText();
         log.info("client long id:" + clientIdToLong);
         String clientIdToShort = ctx.channel().id().asShortText();
@@ -33,6 +34,7 @@ public class ServerHandler extends SimpleChannelInboundHandler<String> {
             //send to client
             ctx.channel().writeAndFlush("Yoru msg is:" + msg);
         }
+        ctx.channel().writeAndFlush(Unpooled.copiedBuffer(msg.getBytes())).addListener(ChannelFutureListener.CLOSE);
 
     }
 

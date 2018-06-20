@@ -14,14 +14,11 @@ import org.springframework.stereotype.Component;
 @Qualifier("springProtocolInitializer")
 public class StringProtocolInitalizer extends ChannelInitializer<SocketChannel> {
 
-    @Autowired
-    StringDecoder stringDecoder;
+    StringDecoder stringDecoder = new StringDecoder();
 
-    @Autowired
-    StringEncoder stringEncoder;
+    StringEncoder stringEncoder = new StringEncoder();
 
-    @Autowired
-    ClientHandler clientHandler;
+    ClientHandler clientHandler  = new ClientHandler();
 
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
